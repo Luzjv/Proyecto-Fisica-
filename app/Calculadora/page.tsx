@@ -42,12 +42,19 @@ export default function Calculadora() {
     const h = parseFloat(altura) ||0;
     const t = parseFloat(tiempo)||0;
     const v = parseFloat(velocidad)||0;
+    
     let calculo: string = '';
 
     if (opcion === 'altura') {
-      if (!isNaN(t) && !isNaN(v)) {
-        const alturaMaxima = (v * t) / 2;
-        calculo = `Altura máxima alcanzada: ${alturaMaxima.toFixed(2)} m`;
+      if (!isNaN(t) &&!isNaN(v)) {
+        if(v==0){
+          const alturaMaxima = g * t^2*0.5;
+          calculo = `Altura máxima alcanzada: ${alturaMaxima.toFixed(2)} m`;
+        }else{
+          const alturaMaxima = (v * t) / 2;
+          calculo = `Altura máxima alcanzada: ${alturaMaxima.toFixed(2)} m`;
+        }
+        
       } else {
         calculo = 'Por favor, ingresa tiempo y velocidad.';
       }
