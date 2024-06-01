@@ -48,7 +48,7 @@ export default function Calculadora() {
     if (opcion === 'altura') {
       if (!isNaN(t) &&!isNaN(v)) {
         if(v==0){
-          const alturaMaxima = g *(t*t)*0.5;
+          const alturaMaxima = (g *(t*t))/2;
           calculo = `Altura máxima alcanzada: ${alturaMaxima.toFixed(2)} m`;
         }else{
           const alturaMaxima = (v * t) / 2;
